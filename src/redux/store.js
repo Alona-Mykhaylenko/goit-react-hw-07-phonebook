@@ -10,11 +10,6 @@ import {
   REGISTER,
 } from "redux-persist";
 
-// const persistConfig = {
-//   key: 'hello',
-//   storage,
-// };
-
 const middleware = [
   ...getDefaultMiddleware({
     serializableCheck: {
@@ -24,14 +19,10 @@ const middleware = [
   logger,
 ];
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 const store = configureStore({
   reducer: rootReducer,
   middleware,
   devTools: process.env.NODE_ENV === "development",
 });
-
-// const persistor = persistStore(store);
 
 export default store;
